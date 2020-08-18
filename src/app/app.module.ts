@@ -1,11 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IconsProviderModule } from './icons-provider.module';
-import { NzLayoutModule } from 'ng-zorro-antd/layout';
-import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,21 +12,20 @@ import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { APP_BASE_HREF, LocationStrategy } from '@angular/common';
 import { environment } from '../environments/environment';
-import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
-
+import { ShareComponentsModule } from "./shared/components/components.module";
+import { AntDesignModule } from "./shared/ant-design/ant-design.module";
 registerLocaleData(en);
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SidebarComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     IconsProviderModule,
-    NzLayoutModule,
-    NzMenuModule,
+    ShareComponentsModule,
+    AntDesignModule,
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule
