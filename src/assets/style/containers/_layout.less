@@ -1,0 +1,42 @@
+body {
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.layout {
+  min-height: 100vh;
+
+  .logo {
+    width: 190px;
+    margin: 0 auto;
+    margin-top: 35px;
+    margin-bottom: 70px;
+  }
+
+  nz-sider {
+    overflow: auto;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    background: @sidebar-color;
+  }
+
+  .right-layout {
+    margin-left: 240px;
+  }
+
+  nz-content {
+    margin: 24px 16px 0;
+    overflow: initial;
+  }
+
+  .inner-content {
+    padding: 24px;
+    background: #fff;
+    text-align: center;
+  }
+
+  nz-footer {
+    text-align: center;
+  }
+}
