@@ -22,7 +22,7 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": true,
+            "aot": false,
             "assets": [
               "src/assets/img/favicon.ico",
               "src/robot.txt",
@@ -35,6 +35,7 @@
             ],
             "styles": [
               "src/assets/fonts/font-lato.css",
+              "src/assets/fonts/font-material-icon.css",
               "src/styles.less",
               "src/assets/style/main.less"
             ],

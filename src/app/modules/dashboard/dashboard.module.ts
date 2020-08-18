@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { DashboardRoutingModule } from './dashboard-routing.module';
+import { NgModule } from '@angular/core';
 import { CropDashboardComponent } from './crop-dashboard/crop-dashboard.component';
-import { ShareComponentsModule } from 'src/app/shared/components/components.module';
+import { DashboardRoutingModule } from './dashboard-routing.module';
+import { BreadcrumbModule } from '../../shared/components/breadcrumb/breadcrumb.module';
+
 
 
 @NgModule({
@@ -11,7 +11,7 @@ import { ShareComponentsModule } from 'src/app/shared/components/components.modu
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    ShareComponentsModule,
-  ]
+    BreadcrumbModule,
+  ],
 })
 export class DashboardModule { }

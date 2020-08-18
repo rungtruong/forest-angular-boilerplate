@@ -1,9 +1,12 @@
-<nz-breadcrumb>
-  <nz-breadcrumb-item>
-    Home
-  </nz-breadcrumb-item>
-  <nz-breadcrumb-item *ngFor="let item of data">
-    <a >{{item.label}}</a>
-  </nz-breadcrumb-item>
-
-</nz-breadcrumb>
+<div class="ft-breadcrumb">
+  <nz-breadcrumb>
+    <nz-breadcrumb-item class="ft-breadcrumb__home">
+      Home
+    </nz-breadcrumb-item>
+    <nz-breadcrumb-item *ngFor="let item of data">
+      <a >{{item.label}}</a>
+    </nz-breadcrumb-item>
+  
+  </nz-breadcrumb>
+  
+</div>

@@ -10,7 +10,9 @@
         font-size: @font-size-text;
         color: #fff;
         transition: 0.3 all;
-        .anticon {
+        outline: none;
+
+        i {
           margin: 0;
           padding: 0 29px 0 18.5px;
           vertical-align: middle;
@@ -27,7 +29,7 @@
       .ant-menu-item-selected {
         background-color: @sidebar-item-hover-color !important;
 
-        .anticon {
+        i {
           border-left: 3px solid #fff;
           transition: 0.3 all;
         }
@@ -53,7 +55,7 @@
           font-size: @font-size-text;
           color: #fff;
           transition: 0.3 all;
-          .anticon {
+          i {
             margin: 0;
             padding: 0 29px 0 18.5px;
             vertical-align: middle;
@@ -70,7 +72,7 @@
           line-height: @height-sub-menu-item;
           margin-top: 10px;
           margin-bottom: 10px;
-          .anticon {
+          i {
             margin: 0;
             padding: 0 10px 0;
             vertical-align: middle;
@@ -87,7 +89,7 @@
             @sidebar-sub-color1,
             @sidebar-sub-color2 61%
           );
-          .anticon {
+          i {
             border-left: none;
           }
         }
@@ -95,7 +97,7 @@
       .ant-menu-submenu-selected {
         background-color: @sidebar-item-hover-color !important;
         .ant-menu-submenu-title {
-          .anticon {
+          i {
             &:first-child {
               border-left: 3px solid #fff;
             }
