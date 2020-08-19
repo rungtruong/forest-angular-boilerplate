@@ -7,11 +7,8 @@ import { DashboardComponent } from './dashboard.component';
 const routes: Routes = [
   {
     path: '', component: DashboardComponent, children: [
-      // { path: ROUTE.DASHBOARD.CROP, component: CropDashboardComponent },
-      {
-        path: ROUTE.DASHBOARD.CROP,
-        loadChildren: () => import('./crop-dashboard/crop-dashboard.module').then(m => m.CropDashboardModule)
-      },
+      { path: ROUTE.DASHBOARD.CROP, component: CropDashboardComponent },
+
     ]
   },
 

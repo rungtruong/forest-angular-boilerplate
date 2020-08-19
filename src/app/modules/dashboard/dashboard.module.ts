@@ -8,13 +8,13 @@ import { DashboardComponent } from './dashboard.component';
 
 
 @NgModule({
-  declarations: [DashboardComponent],
+  declarations: [DashboardComponent, CropDashboardComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,
     BreadcrumbModule,
   ],
-  exports:[
+  exports: [
     DashboardComponent
   ]
 })

@@ -1,6 +1,4 @@
-import { DOCUMENT } from '@angular/common';
-import { Component, Inject, OnInit } from '@angular/core';
-import { environment } from '../environments/environment';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,18 +6,8 @@ import { environment } from '../environments/environment';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent implements OnInit {
-  constructor(
-    @Inject(DOCUMENT) private document,
-
-  ) {
-
-  }
+  constructor() {}
   ngOnInit(): void {
-    const bases = this.document.getElementsByTagName('base');
-
-    if (bases.length > 0) {
-      bases[0].setAttribute('href', environment.baseHref);
-    }
 
   }
 }

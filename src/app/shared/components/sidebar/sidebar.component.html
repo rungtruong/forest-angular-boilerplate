@@ -1,12 +1,12 @@
 <nz-sider nzWidth="240px">
-  <ng-scrollbar  barClass="sidebar-scrollbar">
+  <ng-scrollbar barClass="sidebar-scrollbar">
     <div class="logo">
       <img src="/assets/img/logo.png" alt="logo" />
     </div>
     <ul nz-menu nzTheme="dark" nzMode="inline">
       <ng-container *ngFor="let item of menus" [ngSwitch]="item.isGroup">
         <!-- menu group  -->
-        <li nz-submenu *ngSwitchCase="true">
+        <li nz-submenu *ngSwitchCase="true" [routerLinkActive]="['ant-menu-submenu-selected']">
           <span title>
             <i class="material-icons">
               {{ item.icon }}
@@ -14,18 +14,25 @@
             <span>{{ item.name }}</span>
           </span>
           <ul>
-            <li nz-menu-item *ngFor="let itemChild of item.childs" [routerLink]="'/' + [itemChild.url]">
+            <li
+              nz-menu-item
+              *ngFor="let itemChild of item.childs"
+              [routerLinkActive]="['ant-menu-item-selected']"
+              
+            >
+            <a [routerLink]="'/' + [itemChild.url]">
               <i class="material-icons">
                 {{ itemChild.icon }}
               </i>
               <span>{{ itemChild.name }}</span>
+            </a>
             </li>
           </ul>
         </li>
 
         <!-- menu single  -->
-        <li nz-menu-item *ngSwitchDefault [routerLink]="'/' + [item.url]">
-          <a>
+        <li nz-menu-item *ngSwitchDefault [routerLinkActive]="['ant-menu-item-selected']">
+          <a [routerLink]="'/' + [item.url]">
             <!-- <i nz-icon nzType="{{ item.icon }}"></i> -->
             <i class="material-icons">
               {{ item.icon }}
