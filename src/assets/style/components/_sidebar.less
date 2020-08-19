@@ -8,13 +8,18 @@
         padding: 0 !important;
         border-radius: @radius-menu-item;
         font-size: @font-size-text;
+        font-weight: @font-weight-text;
         color: #fff;
         transition: 0.3 all;
         outline: none;
 
+        > a {
+          color: #fff;
+        }
+
         i {
           margin: 0;
-          padding: 0 29px 0 18.5px;
+          padding: 0 22px 0 17px;
           vertical-align: middle;
           font-size: @font-size-icon;
           color: #fff;
@@ -55,9 +60,11 @@
           font-size: @font-size-text;
           color: #fff;
           transition: 0.3 all;
+          font-weight: @font-weight-text;
+
           i {
             margin: 0;
-            padding: 0 29px 0 18.5px;
+            padding: 0 22px 0 17px;
             vertical-align: middle;
             font-size: @font-size-icon;
             color: #fff;
@@ -72,6 +79,8 @@
           line-height: @height-sub-menu-item;
           margin-top: 10px;
           margin-bottom: 10px;
+          font-size: @font-size-sub-text;
+          font-weight: @font-weight-sub-text;
           i {
             margin: 0;
             padding: 0 10px 0;
@@ -107,7 +116,7 @@
 
       // custom menu arrow
       .ant-menu-submenu > .ant-menu-submenu-title .ant-menu-submenu-arrow {
-        right: 16px !important;
+        right: 15px !important;
         top: 34px !important;
         &::before {
           width: 12px !important;
@@ -136,5 +145,8 @@
         }
       }
     }
+  }
+  .scrollbar-control {
+    opacity: 0;
   }
 }

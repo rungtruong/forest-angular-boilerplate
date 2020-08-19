@@ -1,24 +1,30 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { HomeComponent } from './shared/components/home/home.component';
 import { ROUTE } from './core/ultils/systemconst';
 
 const routes: Routes = [
   {
     path: '', component: HomeComponent, children: [
+
       {
-        path: ROUTE.DASHBOARD.MAIN,
-        loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule)
+        path: ROUTE.MANAGEMENT.USER,
+        loadChildren: () => import('./modules/user/user.module').then(m => m.UserModule)
       },
-      { path: '', redirectTo: ROUTE.DASHBOARD.MAIN, pathMatch: 'full' },
     ]
+  },
+  {
+    path: ROUTE.DASHBOARD.MAIN,
+    loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule)
   },
 
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    preloadingStrategy: PreloadAllModules
+  })],
   exports: [RouterModule],
   declarations: []
 })

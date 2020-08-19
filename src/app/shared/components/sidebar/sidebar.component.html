@@ -1,43 +1,45 @@
 <nz-sider nzWidth="240px">
-  <div class="logo">
-    <img src="/assets/img/logo.png" alt="logo" />
-  </div>
-  <ul nz-menu nzTheme="dark" nzMode="inline">
-    <ng-container *ngFor="let item of menus" [ngSwitch]="item.isGroup">
-      <!-- menu group  -->
-      <li
-        nz-submenu
-        nzTitle="{{ item.name }}"
-        nzIcon="{{ item.icon }}"
-        *ngSwitchCase="true"
-      >
-        <ul>
-          <li
-            nz-menu-item
-            *ngFor="let itemChild of item.childs"
-            [routerLink]="'/' + [itemChild.url]"
-          >
+  <ng-scrollbar  barClass="sidebar-scrollbar">
+    <div class="logo">
+      <img src="/assets/img/logo.png" alt="logo" />
+    </div>
+    <ul nz-menu nzTheme="dark" nzMode="inline">
+      <ng-container *ngFor="let item of menus" [ngSwitch]="item.isGroup">
+        <!-- menu group  -->
+        <li nz-submenu *ngSwitchCase="true">
+          <span title>
             <i class="material-icons">
-              {{ itemChild.icon }}
+              {{ item.icon }}
             </i>
-            <span>{{ itemChild.name }}</span>
-          </li>
-        </ul>
-      </li>
+            <span>{{ item.name }}</span>
+          </span>
+          <ul>
+            <li nz-menu-item *ngFor="let itemChild of item.childs" [routerLink]="'/' + [itemChild.url]">
+              <i class="material-icons">
+                {{ itemChild.icon }}
+              </i>
+              <span>{{ itemChild.name }}</span>
+            </li>
+          </ul>
+        </li>
 
-      <!-- menu single  -->
-      <li nz-menu-item *ngSwitchDefault [routerLink]="'/' + [item.url]">
-        <a>
-          <i nz-icon nzType="{{ item.icon }}"></i>
-          <span>{{ item.name }}</span>
-        </a>
+        <!-- menu single  -->
+        <li nz-menu-item *ngSwitchDefault [routerLink]="'/' + [item.url]">
+          <a>
+            <!-- <i nz-icon nzType="{{ item.icon }}"></i> -->
+            <i class="material-icons">
+              {{ item.icon }}
+            </i>
+            <span>{{ item.name }}</span>
+          </a>
+        </li>
+      </ng-container>
+      <li nz-menu-item>
+        <i class="material-icons">
+          login
+        </i>
+        <span>Sign Out</span>
       </li>
-    </ng-container>
-    <li nz-menu-item>
-      <i class="material-icons">
-        login
-      </i>
-      <span>Sign Out</span>
-    </li>
-  </ul>
+    </ul>
+  </ng-scrollbar>
 </nz-sider>

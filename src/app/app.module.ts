@@ -14,6 +14,8 @@ import { AntDesignModule } from './shared/ant-design/ant-design.module';
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
 import { HomeComponent } from './shared/components/home/home.component';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
+import { NgScrollbarModule } from 'ngx-scrollbar';
+import { UserModule } from './modules/user/user.module';
 registerLocaleData(en);
 
 @NgModule({
@@ -29,7 +31,12 @@ registerLocaleData(en);
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    DashboardModule
+    NgScrollbarModule,
+    // DashboardModule,
+    // UserModule
+  ],
+  exports: [
+    HomeComponent
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },
