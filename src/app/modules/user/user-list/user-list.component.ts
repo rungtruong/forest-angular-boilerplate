@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-list.component.less']
 })
 export class UserListComponent implements OnInit {
-
+  breadcrumds: Array<any> = [{
+    url: 'user',
+    label: 'User'
+  }];
   constructor() { }
 
   ngOnInit(): void {

@@ -6,16 +6,14 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { en_US, NZ_I18N } from 'ng-zorro-antd/i18n';
+import { NgScrollbarModule } from 'ngx-scrollbar';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IconsProviderModule } from './icons-provider.module';
 import { AntDesignModule } from './shared/ant-design/ant-design.module';
-import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
 import { HomeComponent } from './shared/components/home/home.component';
-import { DashboardModule } from './modules/dashboard/dashboard.module';
-import { NgScrollbarModule } from 'ngx-scrollbar';
-import { UserModule } from './modules/user/user.module';
+import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
 registerLocaleData(en);
 
 @NgModule({
@@ -32,8 +30,6 @@ registerLocaleData(en);
     HttpClientModule,
     BrowserAnimationsModule,
     NgScrollbarModule,
-    // DashboardModule,
-    // UserModule
   ],
   exports: [
     HomeComponent

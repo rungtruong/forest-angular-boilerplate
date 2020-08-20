@@ -15,6 +15,7 @@ const routes: Routes = [
         path: ROUTE.DASHBOARD.MAIN,
         loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule)
       },
+      { path: '', pathMatch: 'full', redirectTo: ROUTE.MANAGEMENT.USER }
     ]
   },
 
