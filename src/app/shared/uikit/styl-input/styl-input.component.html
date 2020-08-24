@@ -1,10 +1,45 @@
-<div class="styl-input" nz-row>
-  <nz-form-item nz-col [nzSpan]="24">
+<div class="styl-input mb-5" nz-row>
+  <nz-form-item nz-col [nzSpan]="12">
     <nz-form-control>
       <input nz-input name="nodeid" type="text" id="nodeid" required>
-        <label nzFor="nodeid">
-          <span class="content-name">Node ID</span>
-        </label>
+      <label nzFor="nodeid">
+        <span class="content-name">Node ID</span>
+      </label>
     </nz-form-control>
+  </nz-form-item>
+</div>
+
+
+<div class="styl-input-password mb-5" nz-row>
+  <nz-form-item nz-col [nzSpan]="12">
+    <nz-form-control>
+      <nz-input-group [nzSuffix]="suffixTemplate">
+        <input autocomplete="new-password" [type]="passwordVisible ? 'text' : 'password'" nz-input
+          [(ngModel)]="password" required />
+        <label nzFor="nodeid">
+          <span class="content-name">Password</span>
+        </label>
+      </nz-input-group>
+      <ng-template #suffixTemplate>
+        <i nz-icon [nzType]="passwordVisible ? 'eye-invisible' : 'eye'"
+          (click)="passwordVisible = !passwordVisible"></i>
+      </ng-template>
+
+    </nz-form-control>
+  </nz-form-item>
+</div>
+
+
+<div class="styl-tree-select">
+  <nz-form-item nz-col [nzSpan]="12">
+
+    <nz-tree-select  [(ngModel)]="value" [nzMaxTagCount]="3"
+      [nzMaxTagPlaceholder]="omittedPlaceHolder" [nzNodes]="nodes" [nzDefaultExpandAll]="true" [nzAllowClear]="false"
+      [nzMultiple]="true" (ngModelChange)="onChange($event)">
+    </nz-tree-select>
+    <label nzFor="nodeid">
+      <span class="content-name" [ngClass]="{'styl-tree-select--transform': value.length > 0}">Select</span>
+    </label>
+    <ng-template #omittedPlaceHolder let-omittedValues> and {{ omittedValues.length }} more... </ng-template>
   </nz-form-item>
 </div>
