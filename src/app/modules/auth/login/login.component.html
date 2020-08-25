@@ -1,1 +1,41 @@
-<p>login works!</p>
+<div class="login__content">
+  <div class="login__background"></div>
+  <div class="login__form">
+    <img class="logo--image" src="./assets/img/logo-2.png" alt="logo-image">
+    <div class="login--title">
+      Sign in to start your session
+    </div>
+    <form autocomplete="off" nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your username!">
+          <nz-input-group [nzPrefix]="prefixTemplateUser">
+            <input type="text" nz-input formControlName="userName" placeholder="Username/Email" />
+          </nz-input-group>
+          <ng-template #prefixTemplateUser>
+            <i class="material-icons">
+              account_circle
+            </i>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your Password!">
+          <nz-input-group [nzPrefix]="prefixTemplateKey">
+            <input autocomplete="new-password" type="password" nz-input formControlName="password"
+              placeholder="Password" />
+          </nz-input-group>
+          <ng-template #prefixTemplateKey>
+            <i class="material-icons">
+              vpn_key
+            </i>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+      <div class="login__form-action">
+        <a class="login__form-forgot">Forgot Password?</a>
+      </div>
+      <button nz-button class="btn-login" [nzType]="'primary'" >Log in</button>
+
+    </form>
+  </div>
+</div>

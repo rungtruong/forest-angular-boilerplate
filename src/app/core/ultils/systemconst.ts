@@ -1,14 +1,32 @@
+// export const SUB_API = "w/";
 export const API = {
-  ADMIN: {
-    GET_PUBLIC_KEY: 'rest/getpublickey',
-    LOGIN: 'rest/login',
-    LOGIN_TWO_FACTOR: 'rest/login-with-otp',
-    EXTEND_TOKEN: 'rest/extend-token',
-    CHANGE_PASSWORD: 'rest/user/changepass',
-    LOGOUT: '/api/logout',
+  ACCOUNT: {
+    PUBLIC_KEY: '/w/system/getpublickey',
+    LOGIN: '/w/login',
+    VERIFY: '/w/account/password/verify',
+    FORGOT_PASSWORD: '/w/account/forgot-password',
+    RESET_PASSWORD: '/w/account/reset-password',
+    CHANGE_PASSWORD: '/w/account/change-password',
+    CHANGE_PROFILE: '/w/account/change-profile',
+    LOGOUT: '/w/logout',
+
+    // EXTEND_TOKEN: 'rest/extend-token',
   },
 };
+
+export const STORAGE = {
+  USER_KEY: "indoor_user",
+  TOKEN_KEY: "indoor_token",
+  EXPIRED_KEY: "indoor_expired",
+};
+
 export const ROUTE = {
+  ACCOUNT: {
+    MAIN: 'account',
+    LOGIN: 'login',
+    VERIFY: 'verify',
+    CHANGE_PASS: 'changepass'
+  },
   DASHBOARD: {
     MAIN: 'dashboard',
     CROP: 'crop',

@@ -1,7 +1,7 @@
 [
   {
     "context": ["/w/**"],
-    "target": "",
+    "target": "https://uat3.styl.solutions/indoor-farm",
     "secure": false,
     "logLevel" : "debug"
   }

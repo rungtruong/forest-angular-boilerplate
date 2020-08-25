@@ -5,6 +5,10 @@ import { ROUTE } from './core/ultils/systemconst';
 
 const routes: Routes = [
   {
+    path: ROUTE.ACCOUNT.MAIN,
+    loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
+  },
+  {
     path: '', component: HomeComponent, children: [
 
       {
@@ -18,6 +22,7 @@ const routes: Routes = [
       { path: '', pathMatch: 'full', redirectTo: ROUTE.MANAGEMENT.USER }
     ]
   },
+  { path: '**', pathMatch: 'full', redirectTo: ROUTE.ACCOUNT.MAIN }
 
 
 ];

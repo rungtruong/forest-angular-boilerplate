@@ -1,0 +1,128 @@
+.login__content {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  .logo--image {
+    width: 335px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 33px;
+  }
+  .login--title {
+    font-family: Lato;
+    font-size: 26px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.08;
+    letter-spacing: normal;
+    text-align: center;
+    color: #30884b;
+    margin-bottom: 47px;
+  }
+  .login__background {
+    background-image: url("/assets/img/bg_login.png");
+    height: 1130px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .login__form {
+    position: absolute;
+    top: 111px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 700px;
+    form {
+      width: 100%;
+    }
+  }
+  .ant-form-item {
+    margin-bottom: 45px;
+  }
+  .ant-form-item-has-error {
+    margin-bottom: calc(45px - 22px);
+  }
+  .ant-input-affix-wrapper {
+    height: 75px;
+    object-fit: contain;
+    border-radius: 6px;
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+    text-align: center;
+    border: none;
+    &:hover, &:focus{
+      box-shadow: none;
+      border: none;
+    }
+
+    .ant-input-prefix {
+      z-index: 1;
+      padding-top: 15px;
+      i {
+        font-size: 40px;
+        color: #30884b;
+        background-color: #fff;
+      }
+    }
+    input.ant-input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      border-radius: 6px;
+
+      object-fit: contain;
+      font-family: Lato;
+      font-size: 28px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 0.93;
+      letter-spacing: normal;
+      color: #30884b;
+      text-align: center;
+      border: none;
+      &:focus{
+
+      }
+    }
+  }
+  .login__form-action {
+    margin-bottom: 45px;
+    text-align: right;
+  }
+  .login__form-forgot {
+    font-family: Lato;
+    font-size: 28px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: right;
+    color: #30884b;
+  }
+  .btn-login {
+    width: 100%;
+    height: 90px;
+    object-fit: contain;
+    border-radius: 6px;
+    background-color: #30884b;
+    font-family: Lato;
+    font-size: 28px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.96;
+    letter-spacing: 5.6px;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    border: none;
+
+
+  }
+}
