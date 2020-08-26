@@ -15,13 +15,15 @@ export class TokenStorageService {
     window.sessionStorage.clear();
   }
 
-  public saveToken(token: string): void {
-    window.sessionStorage.removeItem(TOKEN_KEY);
-    window.sessionStorage.setItem(TOKEN_KEY, token);
+  public saveToken(token: any): void {
+    window.sessionStorage.removeItem(STORAGE.TOKEN_KEY);
+    window.sessionStorage.removeItem(STORAGE.EXPIRED_KEY);
+    window.sessionStorage.setItem(STORAGE.TOKEN_KEY, token.token);
+    window.sessionStorage.setItem(STORAGE.EXPIRED_KEY, token.expire);
   }
 
   public getToken(): string {
-    return sessionStorage.getItem(TOKEN_KEY);
+    return sessionStorage.getItem(STORAGE.TOKEN_KEY);
   }
 
   public saveUser(user): void {
@@ -30,6 +32,6 @@ export class TokenStorageService {
   }
 
   public getUser(): any {
-    return JSON.parse(sessionStorage.getItem(USER_KEY));
+    return JSON.parse(sessionStorage.getItem(STORAGE.USER_KEY));
   }
 }

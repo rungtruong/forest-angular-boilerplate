@@ -52,18 +52,24 @@
     backdrop-filter: blur(30px);
     text-align: center;
     border: none;
-    &:hover, &:focus{
+    padding: 0;
+    &:hover,
+    &:focus {
       box-shadow: none;
       border: none;
     }
 
     .ant-input-prefix {
       z-index: 1;
-      padding-top: 15px;
+      padding: 0;
+
       i {
         font-size: 40px;
         color: #30884b;
         background-color: #fff;
+        padding-top: 15px;
+        padding-left: 11px;
+        padding-right: 11px;
       }
     }
     input.ant-input {
@@ -85,9 +91,7 @@
       color: #30884b;
       text-align: center;
       border: none;
-      &:focus{
-
-      }
+      padding-right: 11px;
     }
   }
   .login__form-action {
@@ -122,7 +126,5 @@
     color: #ffffff;
     text-transform: uppercase;
     border: none;
-
-
   }
 }
